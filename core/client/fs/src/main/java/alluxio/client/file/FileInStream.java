@@ -75,7 +75,7 @@ public class FileInStream extends InputStream
   protected final FileSystemContext mContext;
   private final AlluxioBlockStore mBlockStore;
   /** File information. */
-  protected URIStatus mStatus;
+  protected final URIStatus mStatus;
 
   /** If the stream is closed, this can only go from false to true. */
   protected boolean mClosed;
@@ -102,7 +102,7 @@ public class FileInStream extends InputStream
   private long mStreamBlockId;
 
   /** The read buffer in file seek. This is used in {@link #readCurrentBlockToEnd()}. */
-  private byte[] mSeekBuffer;
+  private final byte[] mSeekBuffer;
 
   /**
    * Creates a new file input stream.
